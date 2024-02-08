@@ -31,8 +31,6 @@ export async function asyncAdd(a, b) {
   );
 }
 
-
-
 export async function filterArrayAsync(array, filterFunc) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
