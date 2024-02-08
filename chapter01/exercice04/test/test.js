@@ -23,8 +23,8 @@ describe('Chapter 1 -> Course 4', _ => {
       const output = inputs.filter(filter)
       it(`should return the a filtered array of ${inputs}, it should be ${output}`, done => {
         filterArrayWithCallback(inputs, filter, (value) => {
-          assert.equal(value, output)
-          done()
+            assert.deepEqual(value, output)
+            done()
         })
       })
     })
@@ -48,8 +48,7 @@ describe('Chapter 1 -> Course 4', _ => {
       const output = inputs.filter(filter)
       it(`should return the a filtered array of ${inputs}, it should be ${output}`, async () => {
         const value = await filterArrayAsync(inputs, filter)
-        assert.equal(value, output)
-        done()
+        assert.deepEqual(value, output)
       })
     })
   })
