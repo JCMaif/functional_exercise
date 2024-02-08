@@ -13,4 +13,6 @@ export function isPalindrome(str) {
 }
 
 export function countVowels(str) {
+    const vowelsArray = ['a','e','i','o','u'];
+    
 }
