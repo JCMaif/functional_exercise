@@ -16,14 +16,14 @@ describe('Chapter 1 -> Course 4', _ => {
     })
   });
 
-  describe('Filter an Array with callback', _ => {
+  describe('Filter an Array with callback', () => {
     const filter = (a) => a % 2 == 0;
     [...Array(5).keys()].map(_ => {
       const inputs = [...Array(Math.floor(Math.random() * 10))].map(_ => Math.floor(Math.random() * 100))
       const output = inputs.filter(filter)
       it(`should return the a filtered array of ${inputs}, it should be ${output}`, done => {
         filterArrayWithCallback(inputs, filter, (value) => {
-          assert.equal(JSON.stringify(value), JSON.stringify(output))
+          assert.equal(value, output)
           done()
         })
       })
@@ -48,7 +48,8 @@ describe('Chapter 1 -> Course 4', _ => {
       const output = inputs.filter(filter)
       it(`should return the a filtered array of ${inputs}, it should be ${output}`, async () => {
         const value = await filterArrayAsync(inputs, filter)
-        assert.equal(JSON.stringify(value), JSON.stringify(output))
+        assert.equal(value, output)
+        done()
       })
     })
   })
