@@ -21,15 +21,25 @@ export async function asyncAdd(a, b) {
   }).then(
     result => {
       console.log("result done");
-      return result; // Renvoyer le résultat pour être accessible en aval
+      return result;
     }
   ).catch(
     error => {
       console.error("Error");
-      throw error; // Lancer l'erreur pour être gérée en aval si nécessaire
+      throw error; 
     }
   );
 }
+
+/*
+export async function asyncAdd(a, b) {
+  let promise = new Promise((resolve, reject)=> {
+    setTimeout(()=> resolve(a+b), 1000)
+  });
+  let result = await promise;
+  return result;
+}
+*/
 
 export async function filterArrayAsync(array, filterFunc) {
   return new Promise((resolve, reject) => {
