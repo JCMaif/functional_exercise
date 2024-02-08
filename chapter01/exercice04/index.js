@@ -1,5 +1,7 @@
 export function addWithCallback(a, b, callback) {
+  let sum = a + b;
   setTimeout(() => {
+    callback(sum);
   }, 1000);
 }
 
